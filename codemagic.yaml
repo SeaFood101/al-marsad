@@ -27,7 +27,6 @@ workflows:
     environment:
       node: 22
       xcode: latest
-      cocoapods: default
     scripts:
       - name: Install npm dependencies
         script: npm ci
