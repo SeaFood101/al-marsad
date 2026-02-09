@@ -1,0 +1,88 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100dvh; /* Dynamic Viewport Height for mobile Safari */
+  overflow: hidden;
+  background-color: #000;
+  font-family: system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  touch-action: none; /* Prevents pull-to-refresh and rubber-banding */
+}
+
+#root {
+  width: 100%;
+  height: 100dvh; /* Dynamic Viewport Height for mobile Safari */
+  padding-left: env(safe-area-inset-left); /* iPhone notch safe area */
+  padding-right: env(safe-area-inset-right); /* iPhone notch safe area */
+}
+
+/* Inspect Overlay Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.3s ease-out;
+}
+
+/* Wall slide transitions */
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideFromLeft {
+  animation: slideFromLeft 0.3s ease-out;
+}
+
+.animate-slideFromRight {
+  animation: slideFromRight 0.3s ease-out;
+}
